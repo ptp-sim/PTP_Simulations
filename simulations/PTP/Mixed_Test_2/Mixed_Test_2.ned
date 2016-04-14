@@ -1,0 +1,84 @@
+// ============================================================================
+//
+// Copyright 2015 Wolfgang Wallner (wolfgang-wallner AT gmx.at)
+//
+// This file is part of the PTP Simulations project.
+//
+// The PTP Simulations project is free software: you can redistribute it
+// and/or modify it under the terms of the GNU General Public License as
+// published by the Free Software Foundation, either version 3 of the License,
+// or (at your option) any later version.
+//
+// The PTP Simulations project is distributed in the hope that it will be
+// useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU General Public License.com for more details.
+//
+// You should have received a copy of the GNU General Public License.com
+// along with The PTP Simulations project.
+// If not, see <http://www.gnu.org/licenses/>.
+//
+// ============================================================================
+
+// ======================================================
+// Package description
+// ======================================================
+
+package ptp_simulations.simulations.PTP.Mixed_Test_2;
+
+// ======================================================
+// Imports
+// ======================================================
+
+import libptp.Components.Nodes.*;
+import libptp.Components.Cables.*;
+
+// ======================================================
+// Channel declarations
+// ======================================================
+
+// ======================================================
+// Network declarations
+// ======================================================
+network Mixed_Test_2
+{
+    submodules:
+
+        E2E_Master: PTP_EN_E2E_1S_M2 {
+            parameters:
+                @display("p=111,70");
+
+            gates:
+                ethg[1];
+        }
+
+        E2E_TC_1: PTP_TC_E2E_1S_SO {
+            parameters:
+                @display("p=345,70");
+
+            gates:
+                ethg[2];
+        }
+
+        E2E_TC_2: PTP_TC_E2E_2S_SO {
+            parameters:
+                @display("p=609,70");
+
+            gates:
+                ethg[2];
+        }
+
+        E2E_Slave: PTP_EN_E2E_1S_SO {
+            parameters:
+                @display("p=886,70");
+
+            gates:
+                ethg[1];
+        }
+
+    connections allowunconnected:
+
+        E2E_Master.ethg[0] <--> GigabitCable20cm <--> E2E_TC_1.ethg[0];
+        E2E_TC_1.ethg[1] <--> GigabitCable20cm <--> E2E_TC_2.ethg[0];
+        E2E_TC_2.ethg[1] <--> GigabitCable20cm <--> E2E_Slave.ethg[0];
+}

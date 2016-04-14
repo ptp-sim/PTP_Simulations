@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/PTP_Simulations/simulations/Testbenches/EtherPhyTest/results/General-0.sca"/>
+    <inputs name="/PTP_Simulations/simulations/Testbenches/EtherPhyTest/results/General-0.vec"/>
+  </inputs>
+  <datasets>
+    <datasets name="EtherPhyTest">
+      <items xsi:type="scave:Add" filterPattern="" type="VECTOR"/>
+      <items xsi:type="scave:HistogramChart" name="">
+        <properties name="Hist.Bar" value="Outline"/>
+      </items>
+    </datasets>
+  </datasets>
+  <chartSheets>
+    <chartSheets name="default" charts="//@datasets/@datasets.0/@items.1"/>
+  </chartSheets>
+</scave:Analysis>

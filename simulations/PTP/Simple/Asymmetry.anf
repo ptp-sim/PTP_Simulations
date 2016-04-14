@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-*.sca"/>
+    <inputs name="/PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-*.vec"/>
+  </inputs>
+  <datasets>
+    <datasets name="ScaledTimeDiff:vector SimpleTestNetwork.TimeDiffObserver">
+      <items xsi:type="scave:Add" filterPattern="module(SimpleTestNetwork.TimeDiffObserver) AND name(ScaledTimeDiff:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimpleTestNetwork.TimeDiffObserver) AND name(ScaledTimeDiff:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimpleTestNetwork.TimeDiffObserver) AND name(ScaledTimeDiff:vector)" type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="ScaledTimeDiff" lineNameFormat="">
+        <properties name="Graph.Title" value="Measured Time Difference"/>
+        <properties name="Graph.Title.Font" value="Arial-regular-16"/>
+        <properties name="X.Axis.Title" value="Real-time [s]"/>
+        <properties name="Y.Axis.Title" value="Measured time difference [s]"/>
+        <properties name="Axis.Title.Font" value="Arial-regular-14"/>
+        <properties name="Label.Font" value="Arial-regular-12"/>
+        <properties name="Y.Axis.Min" value="-6.0E-7"/>
+        <properties name="Y.Axis.Max" value="1.3E-6"/>
+        <properties name="Legend.Display" value="true"/>
+        <properties name="Legend.Border" value="true"/>
+        <properties name="Legend.Font" value="Arial-regular-12"/>
+        <properties name="Legend.Position" value="Below"/>
+        <properties name="X.Axis.Min" value="400.0"/>
+        <properties name="X.Axis.Max" value="500.0"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-0.vec Asymmetry-0-20151111-10:59:35-473 0 $foo=0, $0=0ns, $1=0ns, $2=0ns, $3=0ns, $4=0ns" value="No asymmetry"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-1.vec Asymmetry-1-20151111-10:59:35-474 1 $foo=1, $0=1000ns, $1=3000ns, $2=0ns, $3=2000ns, $4=1000ns" value="Asymmetry (not corrected)"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-2.vec Asymmetry-2-20151111-10:59:35-475 2 $foo=2, $0=1000ns, $1=3000ns, $2=1500ns, $3=2000ns, $4=1000ns" value="Asymmetry (corrected)"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-0.vec Asymmetry-0-20151111-11:44:33-3974 0 $foo=0, $0=0ns, $1=0ns, $2=0ns, $3=0ns, $4=0ns" value="No asymmetry"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-1.vec Asymmetry-1-20151111-11:44:33-3975 1 $foo=1, $0=400ns, $1=1400ns, $2=0ns, $3=1000ns, $4=600ns" value="Asymmetry (not corrected)"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-2.vec Asymmetry-2-20151111-11:44:33-3976 2 $foo=2, $0=400ns, $1=1400ns, $2=700ns, $3=1000ns, $4=600ns" value="Asymmetry (corrected)"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-0.vec Asymmetry-0-20151111-15:30:46-6551 0 $foo=0, $0=0ns, $1=0ns, $2=0ns, $3=0ns, $4=0ns" value="Path is symmetric"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-1.vec Asymmetry-1-20151111-15:30:46-6552 1 $foo=1, $0=400ns, $1=1400ns, $2=0ns, $3=1000ns, $4=600ns" value="Path is asymmetric (not corrected)"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-2.vec Asymmetry-2-20151111-15:30:46-6553 2 $foo=2, $0=400ns, $1=1400ns, $2=700ns, $3=1000ns, $4=600ns" value="Path is asymmetric (corrected)"/>
+      </items>
+    </datasets>
+    <datasets name="offsetFromMaster">
+      <items xsi:type="scave:Add" filterPattern="module(SimpleTestNetwork.Slave.PTP_Stack) AND name(offsetFromMaster:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimpleTestNetwork.Slave.PTP_Stack) AND name(offsetFromMaster:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(SimpleTestNetwork.Slave.PTP_Stack) AND name(offsetFromMaster:vector)" type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="offsetFromMaster" lineNameFormat="">
+        <properties name="Graph.Title" value="offsetFromMaster"/>
+        <properties name="Graph.Title.Font" value="Arial-regular-16"/>
+        <properties name="X.Axis.Title" value="Real-time [s]"/>
+        <properties name="Y.Axis.Title" value="offsetFromMaster [s]"/>
+        <properties name="Axis.Title.Font" value="Arial-regular-14"/>
+        <properties name="Label.Font" value="Arial-regular-12"/>
+        <properties name="Y.Axis.Min" value="-6.0E-7"/>
+        <properties name="Y.Axis.Max" value="1.3E-6"/>
+        <properties name="Legend.Display" value="true"/>
+        <properties name="Legend.Border" value="true"/>
+        <properties name="Legend.Font" value="Arial-regular-12"/>
+        <properties name="Legend.Position" value="Below"/>
+        <properties name="X.Axis.Min" value="400.0"/>
+        <properties name="X.Axis.Max" value="500.0"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-0.vec Asymmetry-0-20151111-10:59:35-473 0 $foo=0, $0=0ns, $1=0ns, $2=0ns, $3=0ns, $4=0ns" value="No asymmetry"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-1.vec Asymmetry-1-20151111-10:59:35-474 1 $foo=1, $0=1000ns, $1=3000ns, $2=0ns, $3=2000ns, $4=1000ns" value="Asymmetry (not corrected)"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-2.vec Asymmetry-2-20151111-10:59:35-475 2 $foo=2, $0=1000ns, $1=3000ns, $2=1500ns, $3=2000ns, $4=1000ns" value="Asymmetry (corrected)"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-0.vec Asymmetry-0-20151111-11:44:33-3974 0 $foo=0, $0=0ns, $1=0ns, $2=0ns, $3=0ns, $4=0ns" value="No asymmetry"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-1.vec Asymmetry-1-20151111-11:44:33-3975 1 $foo=1, $0=400ns, $1=1400ns, $2=0ns, $3=1000ns, $4=600ns" value="Asymmetry (not corrected)"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-2.vec Asymmetry-2-20151111-11:44:33-3976 2 $foo=2, $0=400ns, $1=1400ns, $2=700ns, $3=1000ns, $4=600ns" value="Asymmetry (corrected)"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-0.vec Asymmetry-0-20151111-15:30:46-6551 0 $foo=0, $0=0ns, $1=0ns, $2=0ns, $3=0ns, $4=0ns" value="Path is symmetric"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-1.vec Asymmetry-1-20151111-15:30:46-6552 1 $foo=1, $0=400ns, $1=1400ns, $2=0ns, $3=1000ns, $4=600ns" value="Path is asymmetric (not corrected)"/>
+        <properties name="Line.Name//PTP_Simulations/simulations/PTP/Simple/results/Asymmetry-2.vec Asymmetry-2-20151111-15:30:46-6553 2 $foo=2, $0=400ns, $1=1400ns, $2=700ns, $3=1000ns, $4=600ns" value="Path is asymmetric (corrected)"/>
+      </items>
+    </datasets>
+  </datasets>
+  <chartSheets>
+    <chartSheets name="Overview" charts="//@datasets/@datasets.1/@items.3 //@datasets/@datasets.0/@items.3"/>
+  </chartSheets>
+</scave:Analysis>

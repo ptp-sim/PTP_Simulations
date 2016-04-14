@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/PTP_Simulations/simulations/PTP/BMC_Tests/EidsonBook/results/Case_5-0.sca"/>
+    <inputs name="/PTP_Simulations/simulations/PTP/BMC_Tests/EidsonBook/results/Case_5-0.vec"/>
+  </inputs>
+  <datasets>
+    <datasets name="Ebest">
+      <items xsi:type="scave:Group" name="Port 1">
+        <items xsi:type="scave:Add" filterPattern="file(/PTP_Simulations/simulations/PTP/BMC_Tests/EidsonBook/results/Case_5-0.vec) AND attr:configname(Case_5) AND attr:runnumber(0) AND module(Case_5.BoundaryClock_8.PTP_Stack) AND name(Port_1_ErbestModuleID:vector)" type="VECTOR"/>
+        <items xsi:type="scave:LineChart" name="Port 1" lineNameFormat="">
+          <properties name="Graph.Title" value="Port 1"/>
+          <properties name="Y.Axis.Min" value="-2.0"/>
+          <properties name="Y.Axis.Max" value="8.0"/>
+          <properties name="X.Axis.Max" value="1.0"/>
+          <properties name="Line.Type" value="SampleHold"/>
+        </items>
+      </items>
+      <items xsi:type="scave:Group">
+        <items xsi:type="scave:Add" filterPattern="file(/PTP_Simulations/simulations/PTP/BMC_Tests/EidsonBook/results/Case_5-0.vec) AND attr:configname(Case_5) AND attr:runnumber(0) AND module(Case_5.BoundaryClock_8.PTP_Stack) AND name(Port_2_ErbestModuleID:vector)" type="VECTOR"/>
+        <items xsi:type="scave:LineChart" name="Port 2" lineNameFormat="">
+          <properties name="Graph.Title" value="Port 2"/>
+          <properties name="Y.Axis.Min" value="-2.0"/>
+          <properties name="Y.Axis.Max" value="8.0"/>
+          <properties name="X.Axis.Max" value="1.0"/>
+          <properties name="Line.Type" value="SampleHold"/>
+        </items>
+      </items>
+      <items xsi:type="scave:Group">
+        <items xsi:type="scave:Add" filterPattern="file(/PTP_Simulations/simulations/PTP/BMC_Tests/EidsonBook/results/Case_5-0.vec) AND attr:configname(Case_5) AND attr:runnumber(0) AND module(Case_5.BoundaryClock_8.PTP_Stack) AND name(Port_4_ErbestModuleID:vector)" type="VECTOR"/>
+        <items xsi:type="scave:LineChart" name="Port 4" lineNameFormat="">
+          <properties name="Graph.Title" value="Port 4"/>
+          <properties name="Y.Axis.Min" value="-2.0"/>
+          <properties name="Y.Axis.Max" value="10.0"/>
+          <properties name="X.Axis.Max" value="1.0"/>
+          <properties name="Line.Type" value="SampleHold"/>
+        </items>
+      </items>
+      <items xsi:type="scave:Group" name="Ebest">
+        <items xsi:type="scave:Add" filterPattern="file(/PTP_Simulations/simulations/PTP/BMC_Tests/EidsonBook/results/Case_5-0.vec) AND attr:configname(Case_5) AND attr:runnumber(0) AND module(Case_5.BoundaryClock_8.PTP_Stack) AND name(EbestModuleID:vector)" type="VECTOR"/>
+        <items xsi:type="scave:LineChart" name="Ebest" lineNameFormat="">
+          <properties name="Graph.Title" value="Ebest"/>
+          <properties name="Y.Axis.Min" value="-2.0"/>
+          <properties name="Y.Axis.Max" value="8.0"/>
+          <properties name="X.Axis.Max" value="1.0"/>
+          <properties name="Line.Type" value="SampleHold"/>
+        </items>
+      </items>
+    </datasets>
+  </datasets>
+  <chartSheets>
+    <chartSheets name="default" charts="//@datasets/@datasets.0/@items.3/@items.1 //@datasets/@datasets.0/@items.0/@items.1 //@datasets/@datasets.0/@items.1/@items.1"/>
+  </chartSheets>
+</scave:Analysis>

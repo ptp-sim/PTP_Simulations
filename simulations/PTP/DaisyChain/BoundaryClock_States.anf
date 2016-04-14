@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="results/BoundaryClock_States*.vec"/>
+    <inputs name="results/BoundaryClock_States*.sca"/>
+  </inputs>
+  <datasets>
+    <datasets name="PortStates">
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Master.PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[0].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[0].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[1].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[1].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[2].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[2].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[3].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[3].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[4].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[4].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[5].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[5].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[6].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[6].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[7].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[7].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[8].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[8].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[9].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[9].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[10].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[10].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[11].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[11].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[12].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[12].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[13].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[13].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[14].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[14].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[15].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[15].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[16].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[16].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[17].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[17].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[18].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[18].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[19].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[19].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[20].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[20].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[21].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[21].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[22].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[22].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[23].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[23].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[24].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[24].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[25].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[25].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[26].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[26].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[27].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[27].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[28].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[28].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[29].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[29].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[30].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[30].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[31].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[31].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[32].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[32].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[33].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[33].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[34].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[34].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[35].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[35].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[36].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[36].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[37].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[37].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[38].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[38].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[39].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[39].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[40].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[40].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[41].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[41].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[42].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[42].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[43].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[43].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[44].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[44].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[45].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[45].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[46].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[46].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[47].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[47].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[48].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[48].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[49].PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Nodes[49].PTP_Stack) AND name(Port_2_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:Add" filterPattern="module(DaisyChainTestNetwork.Endnode.PTP_Stack) AND name(Port_1_portState:vector)" type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="PortStates" lineNameFormat="">
+        <properties name="Graph.Title" value="Port states of BCs"/>
+        <properties name="Graph.Title.Font" value="Arial-regular-14"/>
+        <properties name="X.Axis.Title" value="Real-time"/>
+        <properties name="Y.Axis.Title" value="Port states"/>
+        <properties name="Axis.Title.Font" value="Arial-regular-12"/>
+        <properties name="Label.Font" value="Arial-regular-10"/>
+        <properties name="Line.Type" value="SampleHold"/>
+      </items>
+    </datasets>
+  </datasets>
+  <chartSheets/>
+</scave:Analysis>
