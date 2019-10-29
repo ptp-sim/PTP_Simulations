@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.Testbenches.PTP_MAC_Test2;
+package simulations.Testbenches.PTP_MAC_Test2;
 
 import libptp.Components.*.*;
 

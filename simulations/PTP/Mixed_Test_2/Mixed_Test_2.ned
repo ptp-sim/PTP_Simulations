@@ -24,7 +24,7 @@
 // Package description
 // ======================================================
 
-package ptp_simulations.simulations.PTP.Mixed_Test_2;
+package simulations.PTP.Mixed_Test_2;
 
 // ======================================================
 // Imports

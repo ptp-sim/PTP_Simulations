@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.Testbenches.EncapTest;
+package simulations.Testbenches.EncapTest;
 
 import libptp.Hardware.*.*;
 import libptp.Testbenches.*.*;

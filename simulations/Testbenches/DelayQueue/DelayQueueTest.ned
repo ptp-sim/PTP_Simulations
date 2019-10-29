@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.Testbenches.DelayQueue;
+package simulations.Testbenches.DelayQueue;
 
 
 import inet.base.Sink;

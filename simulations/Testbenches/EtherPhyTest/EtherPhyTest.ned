@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.Testbenches.EtherPhyTest;
+package simulations.Testbenches.EtherPhyTest;
 
 import libptp.Hardware.EtherPhy.EtherPhy;
 import libptp.Testbenches.EtherPhyTester.EtherPhyTester;

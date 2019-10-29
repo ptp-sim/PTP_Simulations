@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.Testbenches.LLC_Test;
+package simulations.Testbenches.LLC_Test;
 
 import inet.base.Sink;
 

@@ -24,7 +24,7 @@
 // Package description
 // ======================================================
 
-package ptp_simulations.simulations.PTP.DaisyChain;
+package simulations.PTP.DaisyChain;
 
 // ======================================================
 // Imports

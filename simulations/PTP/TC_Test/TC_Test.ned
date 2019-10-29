@@ -24,7 +24,7 @@
 // Package description
 // ======================================================
 
-package ptp_simulations.simulations.PTP.TC_Test;
+package simulations.PTP.TC_Test;
 
 // ======================================================
 // Imports

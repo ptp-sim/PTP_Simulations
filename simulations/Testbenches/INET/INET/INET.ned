@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.Testbenches.INET.INET;
+package simulations.Testbenches.INET.INET;
 
 import inet.applications.tcpapp.TCPSinkApp;
 import inet.applications.tcpapp.TelnetApp;

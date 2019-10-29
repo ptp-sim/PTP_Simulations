@@ -20,6 +20,6 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations;
+package simulations;
 
 @license(GPL);

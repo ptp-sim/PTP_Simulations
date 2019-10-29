@@ -24,7 +24,7 @@
 // Package description
 // ======================================================
 
-package ptp_simulations.simulations.PTP.Simple;
+package simulations.PTP.Simple;
 
 // ======================================================
 // Imports

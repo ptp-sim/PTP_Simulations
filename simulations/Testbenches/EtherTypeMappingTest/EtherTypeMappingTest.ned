@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.Testbenches.EtherTypeMappingTest;
+package simulations.Testbenches.EtherTypeMappingTest;
 
 import libptp.Firmware.EthernetII_LLC.*;
 

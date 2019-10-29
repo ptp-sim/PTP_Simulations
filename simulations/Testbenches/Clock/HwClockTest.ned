@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.Testbenches.Clock;
+package simulations.Testbenches.Clock;
 
 import libptp.Hardware.HwClock.ScheduleClock.IScheduleClock;
 import libptp.Components.Utilities.TimeDiffObserver.*;

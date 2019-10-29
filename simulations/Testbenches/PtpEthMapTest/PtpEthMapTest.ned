@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.Testbenches.PtpEthMapTest;
+package simulations.Testbenches.PtpEthMapTest;
 
 import inet.base.Sink;
 

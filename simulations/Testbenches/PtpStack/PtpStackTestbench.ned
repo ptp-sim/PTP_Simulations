@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.Testbenches.PtpStack;
+package simulations.Testbenches.PtpStack;
 
 import libptp.Testbenches.PtpStackTest.*;
 

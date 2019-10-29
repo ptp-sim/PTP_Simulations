@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.Testbenches.ControllerTest;
+package simulations.Testbenches.ControllerTest;
 
 import libptp.Hardware.HwClock.ScheduleClock.IScheduleClock;
 

@@ -24,7 +24,7 @@
 // Package description
 // ======================================================
 
-package ptp_simulations.simulations.PTP.SingleMaster;
+package simulations.PTP.SingleMaster;
 
 // ======================================================
 // Imports

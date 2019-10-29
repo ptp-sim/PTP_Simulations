@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.PTP.BMC_Tests.EidsonBook;
+package simulations.PTP.BMC_Tests.EidsonBook;
 
 import libptp.Components.Nodes.*;
 import libptp.Components.Cables.*;

@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.Testbenches.RelayUnitTest;
+package simulations.Testbenches.RelayUnitTest;
 
 import libptp.Software.*.*;
 import libptp.Firmware.*.*;

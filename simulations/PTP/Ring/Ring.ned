@@ -24,7 +24,7 @@
 // Package description
 // ======================================================
 
-package ptp_simulations.simulations.PTP.Ring;
+package simulations.PTP.Ring;
 
 // ======================================================
 // Imports

@@ -20,7 +20,7 @@
 //
 // ============================================================================
 
-package ptp_simulations.simulations.Testbenches.ClockSchedule;
+package simulations.Testbenches.ClockSchedule;
 
 import libptp.Components.Utilities.TimeDiffObserver.*;
 import libptp.Testbenches.*.*;
