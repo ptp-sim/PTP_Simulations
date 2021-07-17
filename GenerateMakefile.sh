@@ -12,10 +12,10 @@ CONFIG_FILE_NAME=$2
 CONFIG=$3
 
 # Path configurations
-OMNET_STUFF_PATH=/main/TU/act/OMNeT_Stuff
+INET_PATH=~/omnetpp/inet
+OMNET_STUFF_PATH=~/ptp
 LIBPTP_PATH=${OMNET_STUFF_PATH}/libPTP
 PTPSIM_PATH=${OMNET_STUFF_PATH}/PTP_Simulations
-INET_PATH=/main/Software/OMNeT++/inet
 UTILS_PATH=${OMNET_STUFF_PATH}/OMNeT_Utils
 
 # Library paths
