@@ -24,15 +24,18 @@
 // Package description
 // ======================================================
 
-package simulations.PTP.DaisyChain;
+package simulations.PTP.Mixed_Network_1;
 
 // ======================================================
 // Imports
 // ======================================================
 
-import libptp.Components.*.*;
+import libptp.Components.Nodes.*;
+import libptp.Components.Cables.*;
 
-import libptp.Components.Utilities.TimeDiffObserver.*;
+import inet.base.Sink;
+import inet.nodes.ethernet.EtherHost;
+import inet.nodes.ethernet.EtherSwitch;
 
 // ======================================================
 // Channel declarations
@@ -41,55 +44,76 @@ import libptp.Components.Utilities.TimeDiffObserver.*;
 // ======================================================
 // Network declarations
 // ======================================================
-network DaisyChainTestNetwork
+network Mixed_Network_1
 {
-    parameters:
-
-        int NumNodes = default(100);
-        int NumObserver = NumNodes/10;
-
     submodules:
 
-        Master: PTP_EN_P2P_1S_M1 {
+        Master: PTP_EN_P2P_1S_M2 {
             parameters:
-                @display("p=315,102");
+                @display("p=90,177");
 
             gates:
                 ethg[1];
         }
 
-        Nodes[NumNodes]: <> like IPTP_EtherNode {
+        BoundaryClk: PTP_BC_P2P_1S_M3 {
             parameters:
-                @display("p=473,102,m,10,100,100");
+                @display("p=217,177");
 
             gates:
                 ethg[2];
         }
 
-        Endnode: PTP_EN_P2P_1S_SO {
+        TC_1S: PTP_TC_P2P_1S_SO {
             parameters:
-                @display("p=315,197");
+                @display("p=364,177");
+
+            gates:
+                ethg[2];
+        }
+
+        TC_2S: PTP_TC_P2P_2S_SO {
+            parameters:
+                @display("p=683,177");
+
+            gates:
+                ethg[2];
+        }
+
+        Office_PC_1: EtherHost {
+            parameters:
+                @display("p=525,54;is=l");
+        }
+        Office_PC_2: EtherHost {
+            parameters:
+                @display("p=525,274;is=l");
+        }
+
+        Office_Switch: EtherSwitch {
+            parameters:
+                @display("p=526,176;is=l");
+            gates:
+                ethg[5];
+        }
+
+
+        Slave: PTP_EN_P2P_1S_SO {
+            parameters:
+                @display("p=833,177");
 
             gates:
                 ethg[1];
         }
 
-        TimeDiffObserver[NumObserver]: TimeDiffObserver {
-            parameters:
-                @display("p=122,102,c,100");
-
-                ClockPath1 = default("^.Master.NIC.Clock");
-                ClockPath2 = default("^.Nodes[" + string(((index+1) * 10)-1) + "].NIC.Clock");
-
-        }
-
     connections allowunconnected:
 
-        Endnode.ethg[0] <--> GigabitCable <--> Nodes[0].ethg[0];
+        Master.ethg[0]          <--> GigabitCable100m   <--> BoundaryClk.ethg[0];
+        BoundaryClk.ethg[1]     <--> GigabitCable10m   <--> TC_1S.ethg[0];
+        TC_1S.ethg[1]           <--> GigabitCable10m   <--> Office_Switch.ethg[0];
+        Office_Switch.ethg[1]   <--> GigabitCable10m   <--> TC_2S.ethg[0];
+        TC_2S.ethg[1]           <--> GigabitCable10m   <--> Slave.ethg[0];
 
-        for i=0..NumNodes-2 {
-            Nodes[i].ethg[1] <--> GigabitCable <--> Nodes[i+1].ethg[0];
-        }
+        Office_Switch.ethg[2]   <--> GigabitCable10m   <--> Office_PC_1.ethg;
+        Office_Switch.ethg[3]   <--> GigabitCable10m   <--> Office_PC_2.ethg;
 
-        Nodes[NumNodes-1].ethg[1] <--> GigabitCable <--> Master.ethg[0];
 }

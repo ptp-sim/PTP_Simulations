@@ -24,14 +24,13 @@
 // Package description
 // ======================================================
 
-package simulations.PTP.Mixed_Test_2;
+package simulations.PTP.Single_Master_Network;
 
 // ======================================================
 // Imports
 // ======================================================
 
-import libptp.Components.Nodes.*;
-import libptp.Components.Cables.*;
+import libptp.Components.*.*;
 
 // ======================================================
 // Channel declarations
@@ -40,37 +39,13 @@ import libptp.Components.Cables.*;
 // ======================================================
 // Network declarations
 // ======================================================
-network Mixed_Test_2
+network Single_Master_Network
 {
     submodules:
 
-        E2E_Master: PTP_EN_E2E_1S_M2 {
+        Master: PTP_EN_E2E_2S_M1 {
             parameters:
-                @display("p=111,70");
-
-            gates:
-                ethg[1];
-        }
-
-        E2E_TC_1: PTP_TC_E2E_1S_SO {
-            parameters:
-                @display("p=345,70");
-
-            gates:
-                ethg[2];
-        }
-
-        E2E_TC_2: PTP_TC_E2E_2S_SO {
-            parameters:
-                @display("p=609,70");
-
-            gates:
-                ethg[2];
-        }
-
-        E2E_Slave: PTP_EN_E2E_1S_SO {
-            parameters:
-                @display("p=886,70");
+                @display("p=71,176");
 
             gates:
                 ethg[1];
@@ -78,7 +53,4 @@ network Mixed_Test_2
 
     connections allowunconnected:
 
-        E2E_Master.ethg[0] <--> GigabitCable20cm <--> E2E_TC_1.ethg[0];
-        E2E_TC_1.ethg[1] <--> GigabitCable20cm <--> E2E_TC_2.ethg[0];
-        E2E_TC_2.ethg[1] <--> GigabitCable20cm <--> E2E_Slave.ethg[0];
 }

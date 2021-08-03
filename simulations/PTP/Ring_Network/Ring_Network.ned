@@ -24,64 +24,46 @@
 // Package description
 // ======================================================
 
-package simulations.PTP.Simple;
+package simulations.PTP.Ring_Network;
 
 // ======================================================
 // Imports
 // ======================================================
 
 import libptp.Components.BasicBlocks.IPTP_EtherNode;
+import libptp.Components.Nodes.*;
 import libptp.Components.Cables.*;
+import libptp.Components.Utilities.TimeDiffObserver.TimeDiffObserver;
 
-import libptp.Components.Utilities.TimeDiffObserver.*;
 
-// ======================================================
-// Channel declarations
-// ======================================================
-
-// ======================================================
-// Network declarations
-// ======================================================
-network SimpleTestNetwork
+network Ring_Network
 {
     parameters:
 
-        string NodePrefix = default("PTP_EN");
-
-        string DelayMech = default("P2P");
-        string StepType = default("1S");
-
-        string MasterSuffix = "M2";
-        string SlaveSuffix = "SO";
+        int NumNodes = default(30);
 
     submodules:
 
-        Master: <NodePrefix + "_" + DelayMech + "_" + StepType + "_" + MasterSuffix> like IPTP_EtherNode {
+        Nodes[NumNodes]: <> like IPTP_EtherNode {
             parameters:
-                @display("p=100,150");
+                @display("p=437,187,ri,500,500");
 
             gates:
-                ethg[1];
-        }
-
-        Slave: <NodePrefix + "_" + DelayMech + "_" + StepType + "_" + SlaveSuffix> like IPTP_EtherNode {
-            parameters:
-                @display("p=300,150");
-
-            gates:
-                ethg[1];
+                ethg[2];
         }
 
         TimeDiffObserver: TimeDiffObserver {
             parameters:
-                @display("p=200,80");
+                @display("p=200,204");
 
-                ClockPath1 = default("^.Master.NIC.Clock");
-                ClockPath2 = default("^.Slave.NIC.Clock");
-
+                ClockPath1 = default("^.Nodes[0].NIC.Clock");
+                ClockPath2 = default("^.Nodes[1].NIC.Clock");
         }
-
     connections allowunconnected:
 
-        Master.ethg[0] <--> GigabitCable10m <--> Slave.ethg[0];
+        for i=0..NumNodes-2 {
+            Nodes[i].ethg[1] <--> GigabitCable <--> Nodes[i+1].ethg[0];
+        }
+
+        Nodes[NumNodes-1].ethg[1] <--> GigabitCable <--> Nodes[0].ethg[0];
 }

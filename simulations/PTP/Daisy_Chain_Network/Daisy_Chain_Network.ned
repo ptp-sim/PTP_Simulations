@@ -24,13 +24,15 @@
 // Package description
 // ======================================================
 
-package simulations.PTP.TC_Test;
+package simulations.PTP.Daisy_Chain_Network;
 
 // ======================================================
 // Imports
 // ======================================================
 
 import libptp.Components.*.*;
+
+import libptp.Components.Utilities.TimeDiffObserver.*;
 
 // ======================================================
 // Channel declarations
@@ -39,45 +41,55 @@ import libptp.Components.*.*;
 // ======================================================
 // Network declarations
 // ======================================================
-network TcTestNetwork
+network Daisy_Chain_Network
 {
+    parameters:
+
+        int NumNodes = default(100);
+        int NumObserver = NumNodes/10;
+
     submodules:
 
-        Master: PTP_EN_P2P_1S_M2 {
+        Master: PTP_EN_P2P_1S_M1 {
             parameters:
-                @display("p=71,176");
+                @display("p=315,102");
 
             gates:
                 ethg[1];
         }
 
-        P2P_TC_1: PTP_TC_P2P_1S_SO {
+        Nodes[NumNodes]: <> like IPTP_EtherNode {
             parameters:
-                @display("p=219,176");
+                @display("p=473,102,m,10,100,100");
 
             gates:
                 ethg[2];
         }
 
-        P2P_TC_2: PTP_TC_P2P_2S_SO {
+        Endnode: PTP_EN_P2P_1S_SO {
             parameters:
-                @display("p=365,176");
-
-            gates:
-                ethg[2];
-        }
-
-        Slave: PTP_EN_P2P_1S_SO {
-            parameters:
-                @display("p=505,176");
+                @display("p=315,197");
 
             gates:
                 ethg[1];
+        }
+
+        TimeDiffObserver[NumObserver]: TimeDiffObserver {
+            parameters:
+                @display("p=122,102,c,100");
+
+                ClockPath1 = default("^.Master.NIC.Clock");
+                ClockPath2 = default("^.Nodes[" + string(((index+1) * 10)-1) + "].NIC.Clock");
+
         }
 
     connections allowunconnected:
 
-        Master.ethg[0] <--> GigabitCable20cm <--> P2P_TC_1.ethg[1];
-        P2P_TC_1.ethg[0] <--> GigabitCable20cm <--> P2P_TC_2.ethg[1];
-        P2P_TC_2.ethg[0] <--> GigabitCable20cm <--> Slave.ethg[0];
+        Endnode.ethg[0] <--> GigabitCable <--> Nodes[0].ethg[0];
+
+        for i=0..NumNodes-2 {
+            Nodes[i].ethg[1] <--> GigabitCable <--> Nodes[i+1].ethg[0];
+        }
+
+        Nodes[NumNodes-1].ethg[1] <--> GigabitCable <--> Master.ethg[0];
 }

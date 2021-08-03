@@ -24,46 +24,61 @@
 // Package description
 // ======================================================
 
-package simulations.PTP.Ring;
+package simulations.PTP.E2E_TC_Network;
 
 // ======================================================
 // Imports
 // ======================================================
 
-import libptp.Components.BasicBlocks.IPTP_EtherNode;
 import libptp.Components.Nodes.*;
 import libptp.Components.Cables.*;
-import libptp.Components.Utilities.TimeDiffObserver.TimeDiffObserver;
 
+// ======================================================
+// Channel declarations
+// ======================================================
 
-network RingTestNetwork
+// ======================================================
+// Network declarations
+// ======================================================
+network E2E_TC_Network
 {
-    parameters:
-
-        int NumNodes = default(30);
-
     submodules:
 
-        Nodes[NumNodes]: <> like IPTP_EtherNode {
+        E2E_Master: PTP_EN_E2E_1S_M2 {
             parameters:
-                @display("p=437,187,ri,500,500");
+                @display("p=111,70");
+
+            gates:
+                ethg[1];
+        }
+
+        E2E_TC_1: PTP_TC_E2E_1S_SO {
+            parameters:
+                @display("p=345,70");
 
             gates:
                 ethg[2];
         }
 
-        TimeDiffObserver: TimeDiffObserver {
+        E2E_TC_2: PTP_TC_E2E_2S_SO {
             parameters:
-                @display("p=200,204");
+                @display("p=609,70");
 
-                ClockPath1 = default("^.Nodes[0].NIC.Clock");
-                ClockPath2 = default("^.Nodes[1].NIC.Clock");
+            gates:
+                ethg[2];
         }
+
+        E2E_Slave: PTP_EN_E2E_1S_SO {
+            parameters:
+                @display("p=886,70");
+
+            gates:
+                ethg[1];
+        }
+
     connections allowunconnected:
 
-        for i=0..NumNodes-2 {
-            Nodes[i].ethg[1] <--> GigabitCable <--> Nodes[i+1].ethg[0];
-        }
-
-        Nodes[NumNodes-1].ethg[1] <--> GigabitCable <--> Nodes[0].ethg[0];
+        E2E_Master.ethg[0] <--> GigabitCable20cm <--> E2E_TC_1.ethg[0];
+        E2E_TC_1.ethg[1] <--> GigabitCable20cm <--> E2E_TC_2.ethg[0];
+        E2E_TC_2.ethg[1] <--> GigabitCable20cm <--> E2E_Slave.ethg[0];
 }

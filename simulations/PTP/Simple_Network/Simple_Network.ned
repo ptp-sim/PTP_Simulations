@@ -24,18 +24,16 @@
 // Package description
 // ======================================================
 
-package simulations.PTP.Mixed_Test_1;
+package simulations.PTP.Simple_Network;
 
 // ======================================================
 // Imports
 // ======================================================
 
-import libptp.Components.Nodes.*;
+import libptp.Components.BasicBlocks.IPTP_EtherNode;
 import libptp.Components.Cables.*;
 
-import inet.base.Sink;
-import inet.nodes.ethernet.EtherHost;
-import inet.nodes.ethernet.EtherSwitch;
+import libptp.Components.Utilities.TimeDiffObserver.*;
 
 // ======================================================
 // Channel declarations
@@ -44,76 +42,46 @@ import inet.nodes.ethernet.EtherSwitch;
 // ======================================================
 // Network declarations
 // ======================================================
-network Mixed_Test_1
+network Simple_Network
 {
+    parameters:
+
+        string NodePrefix = default("PTP_EN");
+
+        string DelayMech = default("P2P");
+        string StepType = default("1S");
+
+        string MasterSuffix = "M2";
+        string SlaveSuffix = "SO";
+
     submodules:
 
-        Master: PTP_EN_P2P_1S_M2 {
+        Master: <NodePrefix + "_" + DelayMech + "_" + StepType + "_" + MasterSuffix> like IPTP_EtherNode {
             parameters:
-                @display("p=90,177");
+                @display("p=100,150");
 
             gates:
                 ethg[1];
         }
 
-        BoundaryClk: PTP_BC_P2P_1S_M3 {
+        Slave: <NodePrefix + "_" + DelayMech + "_" + StepType + "_" + SlaveSuffix> like IPTP_EtherNode {
             parameters:
-                @display("p=217,177");
-
-            gates:
-                ethg[2];
-        }
-
-        TC_1S: PTP_TC_P2P_1S_SO {
-            parameters:
-                @display("p=364,177");
-
-            gates:
-                ethg[2];
-        }
-
-        TC_2S: PTP_TC_P2P_2S_SO {
-            parameters:
-                @display("p=683,177");
-
-            gates:
-                ethg[2];
-        }
-
-        Office_PC_1: EtherHost {
-            parameters:
-                @display("p=525,54;is=l");
-        }
-        Office_PC_2: EtherHost {
-            parameters:
-                @display("p=525,274;is=l");
-        }
-
-        Office_Switch: EtherSwitch {
-            parameters:
-                @display("p=526,176;is=l");
-            gates:
-                ethg[5];
-        }
-
-
-        Slave: PTP_EN_P2P_1S_SO {
-            parameters:
-                @display("p=833,177");
+                @display("p=300,150");
 
             gates:
                 ethg[1];
+        }
+
+        TimeDiffObserver: TimeDiffObserver {
+            parameters:
+                @display("p=200,80");
+
+                ClockPath1 = default("^.Master.NIC.Clock");
+                ClockPath2 = default("^.Slave.NIC.Clock");
+
         }
 
     connections allowunconnected:
 
-        Master.ethg[0]          <--> GigabitCable100m   <--> BoundaryClk.ethg[0];
-        BoundaryClk.ethg[1]     <--> GigabitCable10m   <--> TC_1S.ethg[0];
-        TC_1S.ethg[1]           <--> GigabitCable10m   <--> Office_Switch.ethg[0];
-        Office_Switch.ethg[1]   <--> GigabitCable10m   <--> TC_2S.ethg[0];
-        TC_2S.ethg[1]           <--> GigabitCable10m   <--> Slave.ethg[0];
-
-        Office_Switch.ethg[2]   <--> GigabitCable10m   <--> Office_PC_1.ethg;
-        Office_Switch.ethg[3]   <--> GigabitCable10m   <--> Office_PC_2.ethg;
-
+        Master.ethg[0] <--> GigabitCable10m <--> Slave.ethg[0];
 }

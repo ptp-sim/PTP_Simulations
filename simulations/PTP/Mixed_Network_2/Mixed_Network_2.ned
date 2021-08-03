@@ -24,7 +24,7 @@
 // Package description
 // ======================================================
 
-package simulations.PTP.Mixed_Test_3;
+package simulations.PTP.Mixed_Network_2;
 
 // ======================================================
 // Imports
@@ -40,7 +40,7 @@ import libptp.Components.Cables.*;
 // ======================================================
 // Network declarations
 // ======================================================
-network Mixed_Test_3
+network Mixed_Network_2
 {
     submodules:
 

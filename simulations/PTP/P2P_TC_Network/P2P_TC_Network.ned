@@ -24,7 +24,7 @@
 // Package description
 // ======================================================
 
-package simulations.PTP.SingleMaster;
+package simulations.PTP.P2P_TC_Network;
 
 // ======================================================
 // Imports
@@ -39,11 +39,11 @@ import libptp.Components.*.*;
 // ======================================================
 // Network declarations
 // ======================================================
-network SingleMasterTestNetwork
+network P2P_TC_Network
 {
     submodules:
 
-        Master: PTP_EN_E2E_2S_M1 {
+        Master: PTP_EN_P2P_1S_M2 {
             parameters:
                 @display("p=71,176");
 
@@ -51,6 +51,33 @@ network SingleMasterTestNetwork
                 ethg[1];
         }
 
+        P2P_TC_1: PTP_TC_P2P_1S_SO {
+            parameters:
+                @display("p=219,176");
+
+            gates:
+                ethg[2];
+        }
+
+        P2P_TC_2: PTP_TC_P2P_2S_SO {
+            parameters:
+                @display("p=365,176");
+
+            gates:
+                ethg[2];
+        }
+
+        Slave: PTP_EN_P2P_1S_SO {
+            parameters:
+                @display("p=505,176");
+
+            gates:
+                ethg[1];
+        }
+
     connections allowunconnected:
 
+        Master.ethg[0] <--> GigabitCable20cm <--> P2P_TC_1.ethg[1];
+        P2P_TC_1.ethg[0] <--> GigabitCable20cm <--> P2P_TC_2.ethg[1];
+        P2P_TC_2.ethg[0] <--> GigabitCable20cm <--> Slave.ethg[0];
 }
