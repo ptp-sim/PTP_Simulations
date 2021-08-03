@@ -83,5 +83,5 @@ network SimpleTestNetwork
 
     connections allowunconnected:
 
-        Master.ethg[0] <--> GigabitCable <--> Slave.ethg[0];
+        Master.ethg[0] <--> GigabitCable10m <--> Slave.ethg[0];
 }
